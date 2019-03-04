@@ -1,0 +1,34 @@
+clear;
+tupian=imread('C:\Users\15pr\Desktop\第二次作业\elain1.bmp');
+T1=[1 1.5 0
+    0 1 0
+    0 0 1];
+T2=[cos(pi/6) sin(pi/6) 0
+    -sin(pi/6) cos(pi/6) 0
+    0 0 1];
+transform1=maketform('affine',T1);
+transform2=maketform('affine',T2);
+tupian1=imtransform(tupian,transform1);
+tupian2=imtransform(tupian,transform2);
+pic1=imresize(tupian1,[2048,2048],'nearest');
+pic2=imresize(tupian1,[2048,2048],'bilinear');
+pic3=imresize(tupian1,[2048,2048],'bicubic');
+pic4=imresize(tupian2,[2048,2048],'nearest');
+pic5=imresize(tupian2,[2048,2048],'bilinear');
+pic6=imresize(tupian2,[2048,2048],'bicubic');
+figure(1);
+imshow(pic1);
+figure(2);
+imshow(pic2);
+figure(3);
+imshow(pic3);
+figure(4);
+imshow(pic4);
+figure(5);
+imshow(pic5);
+figure(6);
+imshow(pic6);
+figure(7);
+imshow(tupian1);
+ figure(8);
+imshow(tupian2);

@@ -1,0 +1,4 @@
+function grey=near(img,x,y)
+[X,Y]=findnear(img,x,y,1);
+grey=img(X(1),Y(1));
+end

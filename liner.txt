@@ -1,0 +1,14 @@
+function grey=liner(img,x,y)
+[X,Y]=findnear(img,x,y,4);
+syms a b c d
+eq1=a*X(1)+b*Y(1)+c*X(1)*Y(1)+d-img(X(1),Y(1));
+eq2=a*X(2)+b*Y(2)+c*X(2)*Y(2)+d-img(X(2),Y(2));
+ eq3=a*X(3)+b*Y(3)+c*X(3)*Y(3)+d-img(X(3),Y(3));
+ eq4=a*X(4)+b*Y(4)+c*X(4)*Y(4)+d-img(X(4),Y(4));
+[a,b,c,d]=solve(eq1,eq2,eq3,eq4,a,b,c,d);
+a=double(a);
+b=double(b);
+c=double(c);
+d=double(d);
+grey=a*x+b*y+d;
+end

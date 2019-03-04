@@ -1,0 +1,10 @@
+function [X,Y]=findnear(tupian,x,y,num)
+%%%%%%%%%%找最近的num个点，xy为当前位置的像素
+[distance,x0,y0]=dis(tupian,x,y);
+t=sort(distance(:));
+[x1,y1]=find(distance<=t(num),num);
+for(i=1:1:num)
+    X(i)=x-x0+x1(i);
+    Y(i)=y-y0+y1(i);
+end
+end

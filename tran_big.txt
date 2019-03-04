@@ -1,0 +1,10 @@
+function img_big=tran_big(tupian)
+%%%%%%%%%%这是把图片放大的函数%%%%%%%%%%%%%
+img_big=(-1)*ones(2048,2048);
+for i=1:1:512
+    for j=1:1:512
+        img_big(4*i-3,4*j-3)=tupian(i,j);
+    end
+end
+%img_big=uint8(img_big);
+end

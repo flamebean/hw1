@@ -1,0 +1,21 @@
+function [distance_M,x0,y0]=dis(tupian,x,y)
+%%%%%%class=1是5*5里找一个class=2是9*9
+%%%%%%%%%距离度量采用城市街区距离%%%%%%%%%%%%
+distance_M=ones(min(x+4,9),min(y+4,9))*100;
+i=0;
+for(s=max(1,x-4):1:min(x+4,2048))
+    i=i+1;
+    j=0;
+    for(t=max(1,y-4):1:min(y+4,2048))
+        j=j+1;
+        if(s==x&&t==y)
+            x0=i;
+            y0=j;
+        end
+        if(tupian(s,t)~=-1)
+            distance=abs(x-s)+abs(y-t);
+            distance_M(i,j)=distance;
+        end
+    end
+end
+end

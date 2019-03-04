@@ -1,0 +1,6 @@
+clear;
+tupian=imread('C:\Users\15pr\Desktop\第二次作业\lena.bmp');
+tupian=double(tupian);
+average=sum(sum(tupian))/(512*512)
+a=(tupian-average).^2;
+D=sqrt(sum(sum(a))/512/512)

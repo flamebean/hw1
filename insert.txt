@@ -1,0 +1,17 @@
+function outputpic=insert(img,kind)
+
+for i=1:1:2048
+    for j=1:1:2048
+        if(img(i,j)==-1)
+%             
+if(kind==1)
+    img(i,j)=near(img,i,j);
+end
+if(kind==2)
+            img(i,j)=liner(img,i,j);
+end
+        end
+    end
+end
+outputpic=uint8(img);
+end
